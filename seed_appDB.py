@@ -2,6 +2,7 @@ import streamlit as st
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+import pandas as pd
 
 # Set up the database
 DATABASE_URL = "sqlite:///seed_insight.db"
