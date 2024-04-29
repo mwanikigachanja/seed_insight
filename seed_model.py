@@ -31,10 +31,7 @@ new_company_name = st.text_input('Register New Company Name')
 new_company_contact = st.text_input('Register New Company Contact Information')
 if st.button('Register Company'):
     new_company_data = {'Company Name': new_company_name, 'Contact Information': new_company_contact}
-    if df_companies.empty:
-        df_companies = pd.DataFrame([new_company_data])
-    else:
-        df_companies = df_companies.append(new_company_data, ignore_index=True)
+    df_companies = df_companies.append(new_company_data, ignore_index=True)
     st.write(f'Company "{new_company_name}" registered successfully!')
 
 # Allow users to register a new variety
