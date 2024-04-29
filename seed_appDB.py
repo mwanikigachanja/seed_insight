@@ -2,11 +2,10 @@ import streamlit as st
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import pandas as pd
 
-# Set up the database
+# Set up the SQLite database
 DATABASE_URL = "sqlite:///seed_insight.db"
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
