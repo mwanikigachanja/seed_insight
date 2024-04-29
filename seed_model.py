@@ -12,13 +12,17 @@ data = {
 df = pd.DataFrame(data)
 
 # Sidebar filters
-variety = st.sidebar.selectbox('Variety', df['Variety'].unique())
-ecozone = st.sidebar.selectbox('Ecozone', df['Ecozone'].unique())
+variety_id = st.sidebar.selectbox('Variety', range(len(df['Variety'])), format_func=lambda i: df['Variety'][i])
+ecozone_id = st.sidebar.selectbox('Ecozone', range(len(df['Ecozone'])), format_func=lambda i: df['Ecozone'][i])
 availability = st.sidebar.selectbox('Availability', ['Branches, Agents, Stockists'])
 price_range = st.sidebar.slider('Price Range (Ksh)', min(df['Price (Ksh)']), max(df['Price (Ksh)']), (0, max(df['Price (Ksh)']) + 100))
 
 # Filtering data based on user selection
-filtered_data = df[(df['Variety'] == variety) & (df['Ecozone'] == ecozone) & (df['Availability'].str.contains(availability)) & (df['Price (Ksh)'] >= price_range[0]) & (df['Price (Ksh)'] <= price_range[1])]
+filtered_data = df[(df['Variety'] == df['Variety'][variety_id]) & 
+                   (df['Ecozone'] == df['Ecozone'][ecozone_id]) & 
+                   (df['Availability'].str.contains(availability)) & 
+                   (df['Price (Ksh)'] >= price_range[0]) & 
+                   (df['Price (Ksh)'] <= price_range[1])]
 
 # Display filtered data
 st.write(filtered_data)
@@ -30,7 +34,7 @@ if st.button('Register Company'):
 
 # Allow users to register a new variety
 new_variety = st.text_input('Register New Variety')
-new_ecozone = st.selectbox('Ecozone', df['Ecozone'].unique())
+new_ecozone = st.text_input('Ecozone')
 new_price = st.number_input('Price (Ksh)')
 if st.button('Register Variety'):
     st.write(f'Variety "{new_variety}" registered successfully!')
