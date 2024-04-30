@@ -58,7 +58,11 @@ st.sidebar.title("Filters")
 variety = st.sidebar.selectbox('Variety', df['Variety'].unique())
 ecozone = st.sidebar.selectbox('Ecozone', df['Ecozone'].unique())
 availability = st.sidebar.selectbox('Availability', ['Branches, Agents, Stockists'])
-price_range = st.sidebar.slider('Price Range (Ksh)', min(df['Price (Ksh)']), max(df['Price (Ksh)']), (min(df['Price (Ksh)']), max(df['Price (Ksh)'])))
+min_price = min(df['Price (Ksh)'])
+max_price = max(df['Price (Ksh)'])
+if min_price >= max_price:
+    min_price = 0  # Set a default minimum value if min is equal to or greater than max
+price_range = st.sidebar.slider('Price Range (Ksh)', min_price, max_price, (min_price, max_price))
 
 # Filtering data based on user selection
 filtered_data = df[(df['Variety'] == variety) & (df['Ecozone'] == ecozone) & (df['Availability'].str.contains(availability)) & (df['Price (Ksh)'] >= price_range[0]) & (df['Price (Ksh)'] <= price_range[1])]
