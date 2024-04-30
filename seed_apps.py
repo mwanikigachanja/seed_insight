@@ -28,7 +28,7 @@ df = pd.DataFrame(data)
 company_df = pd.DataFrame(company_data)
 ecozone_df = pd.DataFrame(ecozone_data)
 
-# Define custom CSS styles
+# Define custom styles
 st.markdown(
     """
     <style>
@@ -47,10 +47,6 @@ st.markdown(
     }
     .st-bw:hover {
         background-color: #45a049;
-    }
-    .st-table td {
-        padding: 12px;
-        text-align: left;
     }
     </style>
     """,
@@ -80,7 +76,7 @@ st.title("Companies")
 
 # Display existing companies
 st.write("Existing Companies:")
-st.table(company_df)
+st.dataframe(company_df)
 
 # Add new company
 st.write("Add New Company:")
@@ -88,16 +84,17 @@ new_company_name = st.text_input("Company Name")
 new_company_contact = st.text_input("Contact Info")
 new_company_specialty = st.selectbox("Specialty", ["Seeds", "Fertilizers", "Pesticides"])
 if st.button("Add Company"):
-    new_entry = {'Company Name': new_company_name, 'Contact Info': new_company_contact, 'Specialty': new_company_specialty}
-    company_df = pd.concat([company_df, pd.DataFrame([new_entry])], ignore_index=True)
+    new_row = pd.DataFrame([[new_company_name, new_company_contact, new_company_specialty]], columns=['Company Name', 'Contact Info', 'Specialty'])
+    company_df = pd.concat([company_df, new_row], ignore_index=True)
     st.success("Company added successfully!")
+    st.dataframe(company_df)
 
 # CRUD operations for eco-zones
 st.title("Eco-zones")
 
 # Display existing eco-zones
 st.write("Existing Eco-zones:")
-st.table(ecozone_df)
+st.dataframe(ecozone_df)
 
 # Add new eco-zone
 st.write("Add New Eco-zone:")
@@ -106,6 +103,7 @@ new_ecozone_altitude = st.number_input("Altitude")
 new_ecozone_rainfall = st.number_input("Rainfall")
 new_ecozone_classification = st.selectbox("Classification", ["Temperate", "Subtropical", "Arid", "Semi-arid"])
 if st.button("Add Eco-zone"):
-    new_entry = {'Ecozone': new_ecozone_name, 'Altitude': new_ecozone_altitude, 'Rainfall': new_ecozone_rainfall, 'Classification': new_ecozone_classification}
-    ecozone_df = pd.concat([ecozone_df, pd.DataFrame([new_entry])], ignore_index=True)
+    new_row = pd.DataFrame([[new_ecozone_name, new_ecozone_altitude, new_ecozone_rainfall, new_ecozone_classification]], columns=['Ecozone', 'Altitude', 'Rainfall', 'Classification'])
+    ecozone_df = pd.concat([ecozone_df, new_row], ignore_index=True)
     st.success("Eco-zone added successfully!")
+    st.dataframe(ecozone_df)
