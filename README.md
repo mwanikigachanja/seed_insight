@@ -1,3 +1,6 @@
+App Structure
+
+
 web_flask: This folder will contain the Flask application files and templates.
 app.py: This file will define the Flask application and routes.
 templates/: This folder will contain HTML templates for rendering the user interface.
