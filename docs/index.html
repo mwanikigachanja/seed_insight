@@ -4,39 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>seedInsight</title>
-    <!-- Include any necessary CSS files -->
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#app">App</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">seedInsight</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#app">App</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container mt-5">
         <section id="about">
             <h2>About seedInsight</h2>
-            <p>Provide a brief description of seedInsight and its purpose.</p>
+            <p>seedInsight is a revolutionary application that provides comprehensive insights into agricultural seed varieties, eco-zones, and availability. Our platform helps farmers, agricultural experts, and seed suppliers make informed decisions to optimize crop production.</p>
         </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Include contact information for inquiries or support.</p>
+            <p>For inquiries or support, please contact us at <a href="mailto:info@seedinsight.com">info@seedinsight.com</a>.</p>
         </section>
 
         <section id="app">
             <h2>seedInsight App</h2>
-            <p>Include a link or description of how to access the main seedInsight application.</p>
+            <p>Explore our app to discover a wide range of seed varieties, their suitability for different eco-zones, availability, and pricing information. Start optimizing your crop production today!</p>
+            <a href="#" class="btn btn-primary">Go to App</a>
         </section>
     </div>
 
-    <!-- Include any necessary JavaScript files -->
-    <script src="script.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 
