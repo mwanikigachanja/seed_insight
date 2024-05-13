@@ -25,13 +25,45 @@ class Comment(db.Model):
 # Define your routes here
 @app.route('/comments', methods=['POST'])
 def receive_comments():
-    # Logic for receiving comments from social media platforms
-    # You can parse the request data and store it in the database
-    # Example:
-    # comment = Comment(platform=request.json['platform'], ...)
-    # db.session.add(comment)
-    # db.session.commit()
-    return jsonify({'message': 'Comments received successfully'})
+   # Get data from the request
+    data = request.json
+    
+    # Extract relevant fields from the data
+    platform = data.get('platform')
+    date = data.get('date')
+    post_content = data.get('post_content')
+    comment_text = data.get('comment_text')
+    sentiment = data.get('sentiment')
+    likes = data.get('likes')
+    replies = data.get('replies')
+    user_info = data.get('user_info')
+    topics_keywords = data.get('topics_keywords')
+    action_required = data.get('action_required')
+    notes = data.get('notes')
+    
+    # Create a new Comment object
+    comment = Comment(
+        platform=platform,
+        date=date,
+        post_content=post_content,
+        comment_text=comment_text,
+        sentiment=sentiment,
+        likes=likes,
+        replies=replies,
+        user_info=user_info,
+        topics_keywords=topics_keywords,
+        action_required=action_required,
+        notes=notes
+    )
+    
+    # Add the comment to the database session
+    db.session.add(comment)
+    
+    # Commit the transaction
+    db.session.commit()
+    
+    return jsonify({'message': 'Comment received and stored successfully'})
+    
 
 @app.route('/analyze', methods=['GET'])
 def perform_analysis():
