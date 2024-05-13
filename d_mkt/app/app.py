@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from app import app, db
+from models import Comment, Post, User
 
 # Initialize the sentiment analyzer
 sid = SentimentIntensityAnalyzer()
@@ -102,4 +104,5 @@ def analyze_sentiment(comment_text):
 # Add more routes as needed
 
 if __name__ == '__main__':
+    db.create_all()
     app.run(debug=True)
