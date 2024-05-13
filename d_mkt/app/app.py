@@ -1,12 +1,14 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from app import app, db
+from models import Comment, Post, User
 
 # Initialize the sentiment analyzer
 sid = SentimentIntensityAnalyzer()
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/comment_analysis'
+SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://ksc_comment:pass123@localhost/ksc_comment'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -102,4 +104,5 @@ def analyze_sentiment(comment_text):
 # Add more routes as needed
 
 if __name__ == '__main__':
+    db.create_all()
     app.run(debug=True)
