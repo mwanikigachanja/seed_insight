@@ -1,0 +1,22 @@
+/* Custom CSS */
+
+/* Main content spacing */
+.container {
+    max-width: 800px;
+}
+
+/* Section titles */
+h2 {
+    margin-top: 40px;
+}
+
+/* Contact email link */
+a[href^="mailto:"] {
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none;
+}
+
+a[href^="mailto:"]:hover {
+    text-decoration: underline;
+}
+

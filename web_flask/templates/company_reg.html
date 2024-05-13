@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration - SeedInsight</title>
+</head>
+<body>
+    <h1>Company Registration</h1>
+    <form action="/submit_company" method="post">
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" required><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required><br>
+        <label for="specialty">Specialty:</label>
+        <select id="specialty" name="specialty" required>
+            <option value="Seeds">Seeds</option>
+            <option value="Chemicals">Chemicals</option>
+            <option value="Fertilizers">Fertilizers</option>
+            <!-- Add more options as needed -->
+        </select><br>
+        <button type="submit">Register Company</button>
+    </form>
+</body>
+</html>
+

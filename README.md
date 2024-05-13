@@ -1,19 +1,45 @@
-web_flask: This folder will contain the Flask application files and templates.
-app.py: This file will define the Flask application and routes.
-templates/: This folder will contain HTML templates for rendering the user interface.
-models: This folder will contain the database engine and other models.
-database.py: This file will define the SQLAlchemy database engine and models.
-seed.py: This file will define the Seed and ProducingCompany models.
-web_dynamic: This folder will contain static files and other dynamic content.
-static/: This folder will contain static assets such as CSS, JavaScript, and images.
-templates/: This folder will contain additional HTML templates.
-API: This folder will contain the API endpoints.
-v1/: This folder will contain version 1 of the API.
-views/: This folder will contain the view functions for API endpoints.
-app.py: This file will define the Flask application for the API.
-web_static: This folder will contain additional static files.
-Additional static assets such as CSS, JavaScript, and images.
-Root files: These files will be at the root of the project directory.
-README.md: This file will contain information about the project.
-requirements.txt: This file will list the dependencies required to run the project.
-Other configuration files (e.g., .env, .gitignore, etc.) as needed.
+**Project Name:** SeedInsight
+
+**Introduction:**
+SeedInsight is a web application designed to provide valuable insights and information about seeds, ecozones, and companies in the agriculture industry. Users can access a comprehensive catalog of seeds, learn about different ecozones and their characteristics, and discover companies specializing in agricultural products.
+
+**Links:**
+- Deployed Site: [SeedInsight](https://seedinsight.webcharm.tech)
+- Final Project Blog Article: [SeedInsight Blog](https://seedinsight.webcharm.tech/blog)
+- Author's LinkedIn: [Charles Mwaniki](https://www.linkedin.com/in/charlesmwaniki)
+
+**Installation:**
+To install SeedInsight locally, follow these steps:
+1. Clone the GitHub repository:
+   ```
+   git clone https://github.com/mwanikigachanja/seedinsight.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd seedinsight
+   ```
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+**Usage:**
+Once installed, you can run SeedInsight by executing the following command:
+```
+python app.py
+```
+Then, open a web browser and navigate to `http://localhost:5000` to access the application.
+
+**Contributing:**
+Contributions to SeedInsight are welcome! If you would like to contribute, please follow these steps:
+1. Fork the repository on GitHub.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive commit messages.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
+
+**Related Projects:**
+- [SeedCatalog](https://github.com/mwanikigachanja/seedcatalog): A related project for managing seed data.
+
+**Licensing:**
+SeedInsight is released under the [MIT License](https://github.com/mwanikigachanja/seedinsight/blob/main/LICENSE).

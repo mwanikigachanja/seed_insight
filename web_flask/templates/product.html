@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog - SeedInsight</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Catalog</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ecozone</th>
+                <th>Crop Name</th>
+                <th>Seed Rate</th>
+                <th>Maturity Period</th>
+                <th>Yield</th>
+                <th>Price</th>
+                <th>Company</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.ecozone }}</td>
+                <td>{{ product.crop_name }}</td>
+                <td>{{ product.seed_rate }}</td>
+                <td>{{ product.maturity_period }}</td>
+                <td>{{ product.yield }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.company }}</td>
+                <td>{{ product.availability }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
