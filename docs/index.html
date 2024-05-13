@@ -3,57 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>seedInsight</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
+    <title>Company Name - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">seedInsight</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#app">App</a>
-                </li>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container mt-5">
-        <section id="about">
-            <h2>About seedInsight</h2>
-            <p>seedInsight is a revolutionary application that provides comprehensive insights into agricultural seed varieties, eco-zones, and availability. Our platform helps farmers, agricultural experts, and seed suppliers make informed decisions to optimize crop production.</p>
-        </section>
+    <!-- Main content area -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Sample data for varieties -->
+            <h1>Sample Varieties</h1>
+            <div class="varieties">
+                <div class="variety">
+                    <h2>Variety 1</h2>
+                    <p>Description of Variety 1</p>
+                </div>
+                <div class="variety">
+                    <h2>Variety 2</h2>
+                    <p>Description of Variety 2</p>
+                </div>
+                <!-- Add more varieties as needed -->
+            </div>
+        </div>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>For inquiries or support, please contact us at <a href="mailto:info@seedinsight.com">info@seedinsight.com</a>.</p>
-        </section>
+        <!-- Sidebar for ecozone data -->
+        <aside class="sidebar">
+            <h2>Sample Ecozone Data</h2>
+            <p>Description of Ecozone</p>
+        </aside>
 
-        <section id="app">
-            <h2>seedInsight App</h2>
-            <p>Explore our app to discover a wide range of seed varieties, their suitability for different eco-zones, availability, and pricing information. Start optimizing your crop production today!</p>
-            <a href="#" class="btn btn-primary">Go to App</a>
-        </section>
+        <!-- Sidebar for company data -->
+        <aside class="sidebar">
+            <h2>Company Data</h2>
+            <p>Company information goes here</p>
+        </aside>
     </div>
 
-    <!-- Include Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Company Name. All rights reserved. Developed by Charles Mwaniki.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
-
