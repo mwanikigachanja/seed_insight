@@ -1,5 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# Initialize the sentiment analyzer
+sid = SentimentIntensityAnalyzer()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/comment_analysis'
@@ -67,13 +71,13 @@ def receive_comments():
 
 @app.route('/analyze', methods=['GET'])
 def perform_analysis():
-   # Retrieve comments from the database
+    # Retrieve comments from the database
     comments = Comment.query.all()
     
-    # Perform analysis (e.g., sentiment analysis)
+    # Perform sentiment analysis
     analyzed_comments = []
     for comment in comments:
-        # Perform sentiment analysis (this is just a placeholder)
+        # Perform sentiment analysis using NLTK's SentimentIntensityAnalyzer
         sentiment_score = analyze_sentiment(comment.comment_text)
         
         # Create a dictionary containing the analyzed data
@@ -88,6 +92,12 @@ def perform_analysis():
     
     # Return analyzed data as JSON response
     return jsonify({'analyzed_comments': analyzed_comments})
+
+def analyze_sentiment(comment_text):
+    # Perform sentiment analysis using NLTK's SentimentIntensityAnalyzer
+    sentiment_scores = sid.polarity_scores(comment_text)
+    # The compound score ranges from -1 (most negative) to 1 (most positive)
+    return sentiment_scores['compound']
 
 # Add more routes as needed
 
