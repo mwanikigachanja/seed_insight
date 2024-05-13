@@ -67,13 +67,27 @@ def receive_comments():
 
 @app.route('/analyze', methods=['GET'])
 def perform_analysis():
-    # Logic for performing analysis on comments
-    # You can retrieve comments from the database, perform sentiment analysis, etc.
-    # Example:
-    # comments = Comment.query.all()
-    # Perform sentiment analysis, keyword extraction, etc.
+   # Retrieve comments from the database
+    comments = Comment.query.all()
+    
+    # Perform analysis (e.g., sentiment analysis)
+    analyzed_comments = []
+    for comment in comments:
+        # Perform sentiment analysis (this is just a placeholder)
+        sentiment_score = analyze_sentiment(comment.comment_text)
+        
+        # Create a dictionary containing the analyzed data
+        analyzed_comment = {
+            'id': comment.id,
+            'platform': comment.platform,
+            'comment_text': comment.comment_text,
+            'sentiment_score': sentiment_score
+            # Add more analyzed data as needed
+        }
+        analyzed_comments.append(analyzed_comment)
+    
     # Return analyzed data as JSON response
-    return jsonify({'message': 'Analysis performed successfully'})
+    return jsonify({'analyzed_comments': analyzed_comments})
 
 # Add more routes as needed
 
