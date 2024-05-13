@@ -3,7 +3,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 
 # Create engine and session
-DATABASE_URL = "mysql://mwaniki:admin@254@localhost/seed_insight"
+db_user = "mwaniki"
+db_pass = "admin@254"
+DATABASE_URL = f"mysql://{db_user}:{db_pass}@localhost/seed_insight"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
