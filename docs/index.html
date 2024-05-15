@@ -165,7 +165,7 @@
             const lat = data.coord.lat;
             const lon = data.coord.lon;
 
-            const alt = await fetch('https://api.open-meteo.com/v1/elevation?latitude=${lat}&longitude=${lon}');
+            const alt = await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lat}&longitude=${lon}`);
             const altData = await alt.json();
             const elevation = altData.elevation;
 
