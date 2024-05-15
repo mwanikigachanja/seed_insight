@@ -166,6 +166,12 @@
             document.getElementById('weather-location').textContent = data.name;
             document.getElementById('weather-temperature').textContent = `${data.main.temp} °C`;
             document.getElementById('weather-description').textContent = data.weather[0].description;
+            document.getElementById('weather-humidity').textContent = `${data.main.humidity}%`;
+            document.getElementById('weather-maxtemp').textContent = `${data.main.temp_max} °C`;
+            document.getElementById('weather-mintemp').textContent = `${data.main.temp_min} °C`;
+            document.getElementById('weather-wind').textContent = `${data.wind.speed} m/s`;
+            document.getElementById('weather-clouds').textContent = `${data.clouds.all}%`;
+            
         }
 
         window.onload = fetchWeather;
@@ -195,9 +201,14 @@
                 <div>
                     <p><strong>Location:</strong> <span id="weather-location"></span></p>
                     <p><strong>Temperature:</strong> <span id="weather-temperature"></span></p>
+                    <p><strong>Humidity:</strong><span id="weather-humidity"></span></p>
+                    <p><strong>Max Temperature:</strong><span id="weather-maxtemp"></span></p>
+                    <p><strong>Min Temperature:</strong><span id="weather-mintemp"></span></p>
                 </div>
                 <div>
                     <p><strong>Description:</strong> <span id="weather-description"></span></p>
+                    <p><strong>Wind:</strong><span id="weather-wind"></span></p>
+                    <p><strong>Clouds:</strong><span id="weather-clouds"></span></p>
                 </div>
             </div>
         </div>
