@@ -171,16 +171,28 @@
 
             if(elevation < 1200) {
                 document.getElementById('weather-zone').textContent = 'Lowland Altitude';
-            } elif(elevation >= 1201 && elevation < 1400) {
+            } else if(elevation >= 1201 && elevation < 1400) {
                 document.getElementById('weather-zone').textContent = 'Dryland Altitude';
-            } elif(elevation >= 1401 && elevation < 1500) {
+            } else if(elevation >= 1401 && elevation < 1500) {
                 document.getElementById('weather-zone').textContent = 'Medium Altitude';
-            } elseif(elevation >= 1501 && elevation < 1800) {
+            } else if(elevation >= 1501 && elevation < 1800) {
                 document.getElementById('weather-zone').textContent = 'Transitional Altitude';
-            } elif(elevation >= 1801 && elevation < 2800) {
+            } else if(elevation >= 1801 && elevation < 2800) {
                 document.getElementById('weather-zone').textContent = 'Highland Altitude';
-            } else {
+            } else if(elevation >= 2801){
                 document.getElementById('weather-zone').textContent = 'Very High Altitude';
+            } else if(elevation >= 1201 && elevation < 1400) {
+                document.getElementById('weather-zone').textContent = 'Dryland Altitude';
+            } else if(elevation >= 1401 && elevation < 1500) {
+                document.getElementById('weather-zone').textContent = 'Medium Altitude';
+            } else if(elevation >= 1501 && elevation < 1800) {
+                document.getElementById('weather-zone').textContent = 'Transitional Altitude';
+            } else if(elevation >= 1801 && elevation < 2800) {
+                document.getElementById('weather-zone').textContent = 'Highland Altitude';
+            } else if(elevation >= 2801){
+                document.getElementById('weather-zone').textContent = 'Very High Altitude';
+            } else {
+                document.getElementById('weather-zone').textContent = 'Unknown Altitude';
             }
 
             document.getElementById('weather-location').textContent = data.name;
