@@ -171,7 +171,8 @@
             document.getElementById('weather-mintemp').textContent = `${data.main.temp_min} °C`;
             document.getElementById('weather-wind').textContent = `${data.wind.speed} m/s`;
             document.getElementById('weather-clouds').textContent = `${data.clouds.all}%`;
-            
+            document.getElementById('weather-lat').textContent = data.coord.lat;
+            document.getElementById('weather-long').textContent = data.coord.lon;
         }
 
         window.onload = fetchWeather;
@@ -200,12 +201,14 @@
             <div class="weather-info">
                 <div>
                     <p><strong>Location:</strong> <span id="weather-location"></span></p>
+                    <p><strong>Latitude:</strong><span id="weather-lat"></span></p>
                     <p><strong>Temperature:</strong> <span id="weather-temperature"></span></p>
                     <p><strong>Max Temperature:</strong><span id="weather-maxtemp"></span></p>
                     <p><strong>Min Temperature:</strong><span id="weather-mintemp"></span></p>
                 </div>
                 <div>
                     <p><strong>Description:</strong> <span id="weather-description"></span></p>
+                    <p><strong>Longitude:</strong><span id="weather-long"></span></p>
                     <p><strong>Humidity:</strong><span id="weather-humidity"></span></p>
                     <p><strong>Wind:</strong><span id="weather-wind"></span></p>
                     <p><strong>Clouds:</strong><span id="weather-clouds"></span></p>
