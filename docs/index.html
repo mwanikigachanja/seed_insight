@@ -154,9 +154,29 @@
         }
 
     </style>
+    
     <script>
         // JavaScript to fetch and display weather data
         async function fetchWeather() {
+            const url = 'https://open-weather13.p.rapidapi.com/city/landon/EN';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '430bbd5628msh423c03d2058743cp1374d0jsn87393bc52466',
+		'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+	document.getElementById('weather-description').textContent = result.weather[0].description;
+    document.getElementById('weather-temperature').textContent = `${result.main.temp} °C`;
+    document.getElementById('weather-location').textContent = result.name;
+} catch (error) {
+	console.error(error);
+}
+
             const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
             const location = 'Nairobi'; // Replace with the desired location
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`);
