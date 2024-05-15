@@ -174,20 +174,12 @@ try {
     document.getElementById('weather-temperature').textContent = `${result.main.temp} °C`;
     document.getElementById('weather-location').textContent = result.name;
 } catch (error) {
-	console.error(error);
+	document.getElementById('weather-description').textContent = 'An error occurred while fetching the weather data.';
+    document.getElementById('weather-temperature').textContent = 'N/A';
+    document.getElementById('weather-location').textContent = 'N/A';
 }
 
-            const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
-            const location = 'Nairobi'; // Replace with the desired location
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`);
-            const data = await response.json();
-
-            document.getElementById('weather-location').textContent = data.name;
-            document.getElementById('weather-temperature').textContent = `${data.main.temp} °C`;
-            document.getElementById('weather-description').textContent = data.weather[0].description;
-        }
-
-        window.onload = fetchWeather;
+        window.onload = fetchWeather();
     </script>
 </head>
 <body>
