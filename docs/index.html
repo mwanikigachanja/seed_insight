@@ -159,7 +159,7 @@
         // JavaScript to fetch and display weather data
         async function fetchWeather() {
             const apiKey = 'e57fe133456b8c6ab739fbc3900619d0'; // Replace with your actual API key
-            const location = 'Mombasa'; // Replace with the desired location
+            const location = 'Kitale'; // Replace with the desired location
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`);
             const data = await response.json();
             const lat = data.coord.lat;
