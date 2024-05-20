@@ -64,23 +64,43 @@
             background-color: #fff;
             padding: 20px;
             margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .varieties {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         .variety {
-            width: calc(33.33% - 20px);
-            margin-right: 20px;
+            flex: 1 1 calc(33.33% - 20px);
             margin-bottom: 20px;
             padding: 20px;
             background-color: #f9f9f9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .variety h2 {
             color: #333;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f4f4f4;
         }
 
         /* Sidebar styles */
@@ -88,6 +108,8 @@
             background-color: #f9f9f9;
             padding: 20px;
             margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .sidebar h2 {
@@ -99,6 +121,8 @@
             background-color: #e9ecef;
             padding: 20px;
             margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .weather-widget h2 {
@@ -138,14 +162,22 @@
         /* Responsive styles */
         @media (max-width: 768px) {
             .varieties .variety {
-                width: calc(50% - 20px);
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .weather-widget .weather-info {
+                flex-direction: column;
+            }
+
+            .weather-widget .weather-info div {
+                width: 100%;
+                margin-bottom: 10px;
             }
         }
 
         @media (max-width: 576px) {
             .varieties .variety {
-                width: 100%;
-                margin-right: 0;
+                flex: 1 1 100%;
             }
 
             .nav-links {
@@ -234,23 +266,24 @@
                     <p><strong>Description:</strong> <span id="weather-description"></span></p>
                     <p><strong>Eco-zone:</strong><span id="weather-zone"></span></p>
                     <p><strong>Longitude:</strong><span id="weather-long"></span></p>
-                    <p><strong>Humidity:</strong><span id="weather-humidity"></span></p>
-                    <p><strong>Wind:</strong><span id="weather-wind"></span></p>
-                    <p><strong>Clouds:</strong><span id="weather-clouds"></span></p>
+                    <p><strong>Wind Speed:</strong> <span id="weather-wind"></span></p>
+                    <p><strong>Cloudiness:</strong> <span id="weather-clouds"></span></p>
+                    <p><strong>Humidity:</strong> <span id="weather-humidity"></span></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Main content area -->
+    <!-- Main content -->
     <div class="container">
         <div class="main-content">
-            <!-- Sample data for varieties -->
             <h1>Sample Varieties</h1>
+
             <div class="varieties">
+                <!-- MAIZE -->
                 <div class="variety">
                     <h2>MAIZE</h2>
-                    <p>Highland Varieties</p>
+                    <h3>Highland Varieties</h3>
                     <table>
                         <thead>
                             <tr>
@@ -293,7 +326,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p>Transitional Zone Varieties</p>
+
+                    <h3>Transitional Zone Varieties</h3>
                     <table>
                         <thead>
                             <tr>
@@ -305,51 +339,39 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>H520</td>
-                                <td>34</td>
+                                <td>KH500-31A</td>
+                                <td>42</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
-                            <tr>
-                                <td>H624</td>
-                                <td>36</td>
-                                <td>2KGs = 350 Kshs</td>
-                                <td>Available</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>Medium Zone Varieties</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Variety</th>
-                                <th>Yield (90kg bags/acre)</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
                             <tr>
                                 <td>H513</td>
-                                <td>26</td>
+                                <td>38</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H515</td>
+                                <td>40</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
                                 <td>H516</td>
-                                <td>30</td>
+                                <td>38</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td>H517</td>
-                                <td>32</td>
+                                <td>H520</td>
+                                <td>45</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p>Lowland Varieties (Pwani Hybrids)</p>
+
+                    <h3>Lowland Varieties</h3>
                     <table>
                         <thead>
                             <tr>
@@ -362,19 +384,32 @@
                         <tbody>
                             <tr>
                                 <td>PH1</td>
-                                <td>20</td>
+                                <td>18</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
                                 <td>PH4</td>
-                                <td>26</td>
+                                <td>20</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>PHB 3253</td>
+                                <td>20</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>PHB 30G19</td>
+                                <td>24</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p>Dryland Varieties</p>
+
+                    <h3>Dryland Varieties</h3>
                     <table>
                         <thead>
                             <tr>
@@ -387,7 +422,7 @@
                         <tbody>
                             <tr>
                                 <td>DH01</td>
-                                <td>15</td>
+                                <td>16</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
@@ -412,6 +447,8 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- SUNFLOWER -->
                 <div class="variety">
                     <h2>SUNFLOWER</h2>
                     <table>
@@ -445,6 +482,8 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- SORGHUM -->
                 <div class="variety">
                     <h2>SORGHUM</h2>
                     <table>
@@ -458,20 +497,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Serena</td>
-                                <td>12</td>
+                                <td>Serena 12</td>
+                                <td></td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td>Seredo</td>
-                                <td>12</td>
+                                <td>Seredo 12</td>
+                                <td></td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td>Gadam</td>
-                                <td>8</td>
+                                <td>Gadam 8</td>
+                                <td></td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
@@ -484,6 +523,8 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- RICE -->
                 <div class="variety">
                     <h2>RICE</h2>
                     <table>
@@ -497,26 +538,120 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Nerica 1</td>
-                                <td>4.5</td>
+                                <td>IR 54</td>
+                                <td>18 - 22</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td>Nerica 4</td>
-                                <td>5</td>
+                                <td>IR 2793</td>
+                                <td>22 - 26</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td>Nerica 10</td>
-                                <td>6</td>
+                                <td>BSI</td>
+                                <td>22 - 25</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td>Nerica 11</td>
-                                <td>7</td>
+                                <td>Basmati 370</td>
+                                <td>22 - 26</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Basmati 217</td>
+                                <td>25 - 30</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Pishori</td>
+                                <td>18 - 20</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- COTTON -->
+                <div class="variety">
+                    <h2>COTTON</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HART 89M</td>
+                                <td>25</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>HART 89M</td>
+                                <td>30</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- WHEAT -->
+                <div class="variety">
+                    <h2>WHEAT</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Njoro BW1</td>
+                                <td>13</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Duma</td>
+                                <td>20</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Kwale</td>
+                                <td>25</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Mbuni</td>
+                                <td>28</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Pasa</td>
+                                <td>28</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Kenya Wren</td>
+                                <td>30</td>
                                 <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
@@ -527,18 +662,10 @@
         </div>
     </div>
 
-    <!-- Sidebar -->
-    <div class="container">
-        <div class="sidebar">
-            <h2>About Us</h2>
-            <p>SeedInsight is a leading provider of high-quality seeds for farmers across various regions. Our mission is to support agricultural growth and sustainability by offering the best seed varieties suited for different climates and soil types.</p>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 SeedInsight. All rights reserved.</p>
+            <p>&copy; 2023 SeedInsight. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
