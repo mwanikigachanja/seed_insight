@@ -6,6 +6,8 @@
     <title>SeedInsight - Home</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* styles.css */
+
         /* Global styles */
         body {
             font-family: Arial, sans-serif;
@@ -55,42 +57,6 @@
         .nav-links a {
             color: #fff;
             text-decoration: none;
-        }
-
-        /* Carousel styles */
-        .carousel {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-images img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .carousel-button {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
         }
 
         /* Main content area styles */
@@ -186,8 +152,9 @@
                 display: none;
             }
         }
-    </style>
 
+    </style>
+    
     <script>
         // JavaScript to fetch and display weather data
         async function fetchWeather() {
@@ -204,16 +171,6 @@
 
             if(elevation < 1200) {
                 document.getElementById('weather-zone').textContent = 'Lowland Altitude';
-            } else if(elevation >= 1201 && elevation < 1400) {
-                document.getElementById('weather-zone').textContent = 'Dryland Altitude';
-            } else if(elevation >= 1401 && elevation < 1500) {
-                document.getElementById('weather-zone').textContent = 'Medium Altitude';
-            } else if(elevation >= 1501 && elevation < 1800) {
-                document.getElementById('weather-zone').textContent = 'Transitional Altitude';
-            } else if(elevation >= 1801 && elevation < 2800) {
-                document.getElementById('weather-zone').textContent = 'Highland Altitude';
-            } else if(elevation >= 2801){
-                document.getElementById('weather-zone').textContent = 'Very High Altitude';
             } else if(elevation >= 1201 && elevation < 1400) {
                 document.getElementById('weather-zone').textContent = 'Dryland Altitude';
             } else if(elevation >= 1401 && elevation < 1500) {
@@ -242,26 +199,6 @@
         }
 
         window.onload = fetchWeather;
-
-        // Carousel functionality
-        let currentIndex = 0;
-
-        const carouselImages = document.querySelector('.carousel-images');
-        const totalImages = document.querySelectorAll('.carousel-images img').length;
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalImages;
-            updateCarousel();
-        });
-
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-            updateCarousel();
-        });
-
-        function updateCarousel() {
-            carouselImages.style.transform = `translateX(${-currentIndex * 100}%)`;
-        }
     </script>
 </head>
 <body>
@@ -305,21 +242,6 @@
         </div>
     </div>
 
-    <!-- Carousel -->
-    <div class="container">
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="img/1.jpg" alt="Image 1">
-                <img src="img/2.jpg" alt="Image 2">
-                <img src="img/3.jpg" alt="Image 3">
-            </div>
-            <div class="carousel-buttons">
-                <button class="carousel-button" id="prevBtn">&lt;</button>
-                <button class="carousel-button" id="nextBtn">&gt;</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Main content area -->
     <div class="container">
         <div class="main-content">
@@ -333,52 +255,293 @@
                         <thead>
                             <tr>
                                 <th>Variety</th>
-                                <th>Yield</th>
+                                <th>Yield (90kg bags/acre)</th>
                                 <th>Price</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>H614D</td>
+                                <td>38</td>
+                                <td>2KGs = 200 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H628</td>
+                                <td>46</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H629</td>
+                                <td>48</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H9401</td>
+                                <td>50</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
                                 <td>H6213</td>
-                                <td>52</td>
-                                <td>2KGs @ 420</td>
+                                <td>54</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Transitional Zone Varieties</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>H520</td>
+                                <td>34</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H624</td>
+                                <td>36</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Medium Zone Varieties</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>H513</td>
+                                <td>26</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H516</td>
+                                <td>30</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H517</td>
+                                <td>32</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Lowland Varieties (Pwani Hybrids)</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PH1</td>
+                                <td>20</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>PH4</td>
+                                <td>26</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Dryland Varieties</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DH01</td>
+                                <td>15</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>DH02</td>
+                                <td>18</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>DH04</td>
+                                <td>24</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>DH08 (New)</td>
+                                <td>26</td>
+                                <td>2KGs = 350 Kshs</td>
                                 <td>Available</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="variety">
-                    <h2>BEANS</h2>
-                    <p>GENERAL</p>
+                    <h2>SUNFLOWER</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (kg/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hungarian White</td>
+                                <td>1500</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Kenyafedha</td>
+                                <td>1000</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>H8998</td>
+                                <td>1200</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <!-- Add more varieties as needed -->
+                <div class="variety">
+                    <h2>SORGHUM</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Serena</td>
+                                <td>12</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Seredo</td>
+                                <td>12</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Gadam</td>
+                                <td>8</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>E1291</td>
+                                <td>15 - 20</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="variety">
+                    <h2>RICE</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variety</th>
+                                <th>Yield (90kg bags/acre)</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nerica 1</td>
+                                <td>4.5</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Nerica 4</td>
+                                <td>5</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Nerica 10</td>
+                                <td>6</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td>Nerica 11</td>
+                                <td>7</td>
+                                <td>2KGs = 350 Kshs</td>
+                                <td>Available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+    </div>
 
-        <!-- Sidebar for ecozone data -->
-        <aside class="sidebar">
-            <h2>Sample Ecozone Data</h2>
-            <p>Description of Ecozone</p>
-        </aside>
-
-        <!-- Sidebar for company data -->
-        <aside class="sidebar">
-            <h2>Company Data</h2>
-            <p>Company information goes here</p>
-        </aside>
+    <!-- Sidebar -->
+    <div class="container">
+        <div class="sidebar">
+            <h2>About Us</h2>
+            <p>SeedInsight is a leading provider of high-quality seeds for farmers across various regions. Our mission is to support agricultural growth and sustainability by offering the best seed varieties suited for different climates and soil types.</p>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <p>&copy; 2024 SeedInsight. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2024 Company Name. All rights reserved. Developed by Charles Mwaniki.</p>
             </div>
         </div>
     </footer>
