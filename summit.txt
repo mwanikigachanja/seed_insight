@@ -1,0 +1,1 @@
+We shall redo the project entirely, incorporating serious Backend mechanism now that I belong to the back end. 
