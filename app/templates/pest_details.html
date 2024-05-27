@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="details">
+    <h2>{{ pest.name }}</h2>
+    <img src="{{ pest.image_url }}" alt="{{ pest.name }}">
+    <p><strong>Description:</strong> {{ pest.description }}</p>
+    <p><strong>Symptoms:</strong> {{ pest.symptoms }}</p>
+    <p><strong>Treatment:</strong> {{ pest.treatment }}</p>
+    <p><strong>Crops Affected:</strong> {{ pest.crops_affected }}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Pest and Disease Management</h2>
+<div class="container">
+    <h3>Pests</h3>
+    <div class="item-list">
+        {% for pest in pests %}
+        <div class="item">
+            <h4><a href="{{ url_for('pest_and_disease.pest_details', id=pest.id) }}">{{ pest.name }}</a></h4>
+            <img src="{{ pest.image_url }}" alt="{{ pest.name }}">
+        </div>
+        {% endfor %}
+    </div>
+
+    <h3>Diseases</h3>
+    <div class="item-list">
+        {% for disease in diseases %}
+        <div class="item">
+            <h4><a href="{{ url_for('pest_and_disease.disease_details', id=disease.id) }}">{{ disease.name }}</a></h4>
+            <img src="{{ disease.image_url }}" alt="{{ disease.name }}">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

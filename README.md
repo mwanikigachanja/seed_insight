@@ -1,5 +1,7 @@
 **Project Name:** SeedInsight
 
+Anthem
+
 **Introduction:**
 SeedInsight is a web application designed to provide valuable insights and information about seeds, ecozones, and companies in the agriculture industry. Users can access a comprehensive catalog of seeds, learn about different ecozones and their characteristics, and discover companies specializing in agricultural products.
 
