@@ -45,3 +45,7 @@ Contributions to SeedInsight are welcome! If you would like to contribute, pleas
 
 **Licensing:**
 SeedInsight is released under the [MIT License](https://github.com/mwanikigachanja/seedinsight/blob/main/LICENSE).
+
+
+
+Coming back with solid facts on ground. Very soon. 
