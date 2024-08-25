@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SeedInsight - Home</title>
+    <!-- I chose this title because this application aims to provide insight on the best of seed available for a given 
+    altitude. --> 
     <link rel="stylesheet" href="styles.css">
     <style>
         /* styles.css */
@@ -259,6 +261,13 @@
     <div class="container">
         <div class="weather-widget">
             <h2>Current Weather</h2>
+            <!--Location Selector-->
+            <div class="location-input-container">
+                <label for="location-input" class="location-label">Change Location:</label>
+                <input type="text" id="location-input" name="location" placeholder="Enter your location" class="location-input">
+            </div>       
+            <!--Insight Card - a place where rubber meets the road. Here, the default location is Kitale, Kenya's food basket. 
+            A user can however adjust their location using the form above.-->     
             <div class="weather-info">
                 <div>
                     <p><strong>Location:</strong> <span id="weather-location"></span></p>
