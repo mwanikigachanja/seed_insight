@@ -203,19 +203,27 @@
 
             if(elevation < 1200) {
                 document.getElementById('weather-zone').textContent = 'Lowland Altitude';
+                document.getElementById('best-seed').textContent = 'DH04 - Kenya Seed Company Ltd';
             } else if(elevation >= 1201 && elevation < 1400) {
                 document.getElementById('weather-zone').textContent = 'Dryland Altitude';
+                document.getElementById('best-seed').textContent = 'DH04 - Kenya Seed Company Ltd';
             } else if(elevation >= 1401 && elevation < 1500) {
                 document.getElementById('weather-zone').textContent = 'Medium Altitude';
+                document.getElementById('best-seed').textContent = 'H513, H516, H517 - Kenya Seed Company Ltd';
             } else if(elevation >= 1501 && elevation < 1800) {
                 document.getElementById('weather-zone').textContent = 'Transitional Altitude';
+                document.getElementById('best-seed').textContent = 'H520, H624 - Kenya Seed Company Ltd';
             } else if(elevation >= 1801 && elevation < 2800) {
                 document.getElementById('weather-zone').textContent = 'Highland Altitude';
+                document.getElementById('best-seed').textContent = 'H6218, H6213, H614D - Kenya Seed Company Ltd';
             } else if(elevation >= 2801){
                 document.getElementById('weather-zone').textContent = 'Very High Altitude';
+                document.getElementById('best-seed').textContent = 'H6218, H6213, H614D, H629, H628 - Kenya Seed Company Ltd';
             } else {
                 document.getElementById('weather-zone').textContent = 'Unknown Altitude';
             }
+
+            if()
 
             document.getElementById('weather-location').textContent = data.name;
             document.getElementById('weather-temperature').textContent = `${data.main.temp} °C`;
