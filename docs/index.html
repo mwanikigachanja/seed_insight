@@ -126,16 +126,35 @@
                 const altData = await altResponse.json();
                 const elevation = altData.elevation;
 
+                // Determine altitude zone
                 let altitudeZone = 'Unknown Altitude';
                 if (elevation < 1200) {
                     altitudeZone = 'Lowland Altitude';
+                } else if (elevation >= 1201 && elevation < 1400) {
+                    altitudeZone = 'Dryland Altitude';
+                } else if (elevation >= 1401 && elevation < 1500) {
+                    altitudeZone = 'Medium Altitude';
+                } else if (elevation >= 1501 && elevation < 1800) {
+                    altitudeZone = 'Transitional Altitude';
                 } else if (elevation >= 1801 && elevation < 2800) {
                     altitudeZone = 'Highland Altitude';
+                } else if (elevation >= 2801) {
+                    altitudeZone = 'Very High Altitude';
                 }
 
+                // Display weather and location information
                 document.getElementById('weather-location').textContent = `Location: ${location}`;
                 document.getElementById('weather-zone').textContent = `Altitude Zone: ${altitudeZone}`;
                 document.getElementById('weather-temperature').textContent = `Temperature: ${data.main.temp} °C`;
+                document.getElementById('weather-description').textContent = `Weather: ${data.weather[0].description}`;
+                document.getElementById('weather-humidity').textContent = `Humidity: ${data.main.humidity}%`;
+                document.getElementById('weather-maxtemp').textContent = `Max Temp: ${data.main.temp_max} °C`;
+                document.getElementById('weather-mintemp').textContent = `Min Temp: ${data.main.temp_min} °C`;
+                document.getElementById('weather-wind').textContent = `Wind Speed: ${data.wind.speed} m/s`;
+                document.getElementById('weather-clouds').textContent = `Cloudiness: ${data.clouds.all}%`;
+                document.getElementById('weather-lat').textContent = `Latitude: ${lat}`;
+                document.getElementById('weather-long').textContent = `Longitude: ${lon}`;
+                document.getElementById('weather-alt').textContent = `Elevation: ${elevation}`;
 
                 displaySeedRecommendations(altitudeZone);
             }
