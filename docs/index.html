@@ -128,9 +128,11 @@
         <table id="seed-table" style="display:none;">
             <thead>
                 <tr>
+                    <th>Crop</th>
                     <th>Seed Variety</th>
                     <th>Maturity Period (Days)</th>
                     <th>Seed Rate per Acre (kg)</th>
+                    <th>Yield (90Kgs bags/Acre)</th>
                     <th>Attributes</th>
                 </tr>
             </thead>
@@ -141,12 +143,29 @@
     <script>
         const seedData = {
             'Lowland Altitude': [
-                { variety: 'Seed A', maturity: '100', rate: '5', attributes: 'Drought resistant, High Yield' },
-                { variety: 'Seed B', maturity: '90', rate: '6', attributes: 'Early Maturing' }
+                { crop: 'Maize',variety: 'PH 1', maturity: '75-100', rate: '10', yield: '20', attributes: 'Early maturity, Heat tolerant, Drought resistant' },
+                { crop:'Maize',variety: 'PH 4', maturity: '100-120', rate: '10', yield: '26', attributes: 'Heat tolerant, Very sweet tasting' },
+                
             ],
             'Highland Altitude': [
-                { variety: 'Seed C', maturity: '120', rate: '4', attributes: 'Cold resistant, High Yield' },
-                { variety: 'Seed D', maturity: '110', rate: '5', attributes: 'Disease resistant' }
+                { crop: 'Maize', variety: 'H6213', maturity: '150-210', rate: '10', yield: '52', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, G.L.S,stem and leaf blight.' },
+                { crop: 'Maize', variety: 'H614D', maturity: '150-210', rate: '10', yield: '38', attributes: 'Sweet tasting variety, Has good density, Has long storage period, Resistant to GLS and Blight' },
+                { crop: 'Maize', variety: 'H614D', maturity: '150-210', rate: '10', yield: '48', attributes: 'Resistant to lodging, Has good husk cover, Good storage quality, Resistant to GLS and ear rot.' },
+                
+            ],
+            'Dryland Altitude': [
+                { crop: 'Maize', variety: 'DH08', maturity: '100-120', rate: '10', yield: '26', attributes: 'Short drought tolerance, Good husk cover and stand-ability.' },
+                { crop: 'Maize', variety: 'DH04', maturity: '75-100', rate: '10', yield: '24', attributes: 'Semi-dent, Good stand ability, Tolerant to ear rots' },
+                
+            ],
+            'Medium Altitude': [
+                { crop: 'Maize', variety: 'H513', maturity: '110-130', rate: '10', yield: '26', attributes: 'Sweet tasting variety, Has good density, Has long storage period, Resistant to GLS and Blight' },
+                { crop: 'Maize', variety: 'H516', maturity: '120-150', rate: '10', yield: '30', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, G.L.S,stem and leaf blight.' },
+                { crop: 'Maize', variety: 'H517', maturity: '120-150', rate: '10', yield: '30', attributes: 'Tolerant to foliar diseases and pests, Has better husk cover, tolerant to cob rot and, MSV, Ideal for irrigation' },
+            ],
+            'Transitional Altitude': [
+                { crop: 'Maize', variety: 'H520', maturity: '150-210', rate: '10', yield: '34', attributes: 'Resistant to lodging, Has good husk cover, Good storage quality, Resistant to GLS and ear rot.' },
+                { crop: 'Maize', variety: 'H624', maturity: '150-210', rate: '10', yield: '36', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, G.L.S,stem and leaf blight.' },
             ],
             // Add more ecozones and seed recommendations here
         };
