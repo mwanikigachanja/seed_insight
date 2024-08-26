@@ -225,7 +225,7 @@
                     seedTable.style.display = '';
                     recommendations.forEach(seed => {
                         const row = document.createElement('tr');
-                        row.innerHTML = `<td>${seed.variety}</td><td>${seed.maturity}</td><td>${seed.rate}</td><td>${seed.attributes}</td>`;
+                        row.innerHTML = `<td>${seed.crop}</td><td>${seed.variety}</td><td>${seed.maturity}</td><td>${seed.rate}</td><td>${seed.yield}</td><td>${seed.attributes}</td>`;
                         seedBody.appendChild(row);
                     });
                 } else {
