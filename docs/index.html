@@ -243,7 +243,9 @@
             document.getElementById('weather-alt').textContent = altData.elevation;
         }
 
-        window.onload = fetchWeather;
+        window.onload = function() {
+    fetchWeather('Kitale'); // Default location
+};
     </script>
 </head>
 <body>
