@@ -6,7 +6,7 @@
     <title>SeedInsight - Automated Crop Planning and Recommendation Module</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add some styling for the location input and table */
+        /* Add some styling for the location input */
         #location-form {
             margin: 20px 0;
             text-align: center;
@@ -32,31 +32,6 @@
 
         #submit-location:hover {
             background-color: #218838;
-        }
-
-        #seed-recommendations {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        table {
-            width: 80%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
         }
     </style>
 </head>
@@ -86,80 +61,59 @@
         <p id="weather-alt">Elevation: Loading...</p>
     </div>
 
-    <div id="seed-recommendations">
-        <h2>Recommended Seeds</h2>
-        <table id="seed-table" style="display:none;">
-            <thead>
-                <tr>
-                    <th>Seed Variety</th>
-                    <th>Maturity Period (Days)</th>
-                    <th>Seed Rate per Acre (kg)</th>
-                    <th>Attributes</th>
-                </tr>
-            </thead>
-            <tbody id="seed-body"></tbody>
-        </table>
-    </div>
-
     <script>
-        const seedData = {
-            'Lowland Altitude': [
-                { variety: 'Seed A', maturity: '100', rate: '5', attributes: 'Drought resistant, High Yield' },
-                { variety: 'Seed B', maturity: '90', rate: '6', attributes: 'Early Maturing' }
-            ],
-            'Highland Altitude': [
-                { variety: 'Seed C', maturity: '120', rate: '4', attributes: 'Cold resistant, High Yield' },
-                { variety: 'Seed D', maturity: '110', rate: '5', attributes: 'Disease resistant' }
-            ],
-            // Add more ecozones and seed recommendations here
-        };
-
         document.addEventListener("DOMContentLoaded", function() {
+            // JavaScript to fetch and display location data
             async function fetchWeather(location = 'Kitale') {
                 const apiKey = 'e57fe133456b8c6ab739fbc3900619d0'; // Replace with your actual API key
+
+                // Fetch weather data based on the location
                 const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`);
                 const data = await response.json();
 
                 const lat = data.coord.lat;
                 const lon = data.coord.lon;
-                const altResponse = await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lat}&longitude=${lon}`);
-                const altData = await altResponse.json();
+
+                // Fetch altitude data based on latitude and longitude
+                const alt = await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lat}&longitude=${lon}`);
+                const altData = await alt.json();
                 const elevation = altData.elevation;
 
+                // Determine altitude zone
                 let altitudeZone = 'Unknown Altitude';
                 if (elevation < 1200) {
                     altitudeZone = 'Lowland Altitude';
+                } else if (elevation >= 1201 && elevation < 1400) {
+                    altitudeZone = 'Dryland Altitude';
+                } else if (elevation >= 1401 && elevation < 1500) {
+                    altitudeZone = 'Medium Altitude';
+                } else if (elevation >= 1501 && elevation < 1800) {
+                    altitudeZone = 'Transitional Altitude';
                 } else if (elevation >= 1801 && elevation < 2800) {
                     altitudeZone = 'Highland Altitude';
+                } else if (elevation >= 2801) {
+                    altitudeZone = 'Very High Altitude';
                 }
 
+                // Display weather and location information
                 document.getElementById('weather-location').textContent = `Location: ${location}`;
                 document.getElementById('weather-zone').textContent = `Altitude Zone: ${altitudeZone}`;
                 document.getElementById('weather-temperature').textContent = `Temperature: ${data.main.temp} °C`;
-
-                displaySeedRecommendations(altitudeZone);
+                document.getElementById('weather-description').textContent = `Weather: ${data.weather[0].description}`;
+                document.getElementById('weather-humidity').textContent = `Humidity: ${data.main.humidity}%`;
+                document.getElementById('weather-maxtemp').textContent = `Max Temp: ${data.main.temp_max} °C`;
+                document.getElementById('weather-mintemp').textContent = `Min Temp: ${data.main.temp_min} °C`;
+                document.getElementById('weather-wind').textContent = `Wind Speed: ${data.wind.speed} m/s`;
+                document.getElementById('weather-clouds').textContent = `Cloudiness: ${data.clouds.all}%`;
+                document.getElementById('weather-lat').textContent = `Latitude: ${lat}`;
+                document.getElementById('weather-long').textContent = `Longitude: ${lon}`;
+                document.getElementById('weather-alt').textContent = `Elevation: ${elevation}`;
             }
 
-            function displaySeedRecommendations(altitudeZone) {
-                const seedTable = document.getElementById('seed-table');
-                const seedBody = document.getElementById('seed-body');
-                seedBody.innerHTML = '';
-
-                const recommendations = seedData[altitudeZone];
-                if (recommendations && recommendations.length > 0) {
-                    seedTable.style.display = '';
-                    recommendations.forEach(seed => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `<td>${seed.variety}</td><td>${seed.maturity}</td><td>${seed.rate}</td><td>${seed.attributes}</td>`;
-                        seedBody.appendChild(row);
-                    });
-                } else {
-                    seedTable.style.display = 'none';
-                }
-            }
-
+            // Fetch default weather for the initial location
             fetchWeather();
 
+            // Add event listener to the location form
             document.getElementById('locationForm').addEventListener('submit', function(event) {
                 event.preventDefault();
                 const locationInput = document.getElementById('location-input').value;
