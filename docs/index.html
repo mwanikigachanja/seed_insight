@@ -184,9 +184,9 @@
 
                 // Determine altitude zone
                 let altitudeZone = 'Unknown Altitude';
-                if (elevation < 1200) {
+                if (elevation < 500) {
                     altitudeZone = 'Lowland Altitude';
-                } else if (elevation >= 1201 && elevation < 1400) {
+                } else if (elevation >= 500 && elevation < 1400) {
                     altitudeZone = 'Dryland Altitude';
                 } else if (elevation >= 1401 && elevation < 1500) {
                     altitudeZone = 'Medium Altitude';
