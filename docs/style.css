@@ -190,3 +190,73 @@ footer a:hover {
     color: #ffffff;
     text-decoration: underline;
 }
+
+/* General Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    display: block; /* Allow scrolling for small screens */
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background-color: #f9f9f9;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+th {
+    background-color: #00796b;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Responsive Styling for Mobile Devices */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+        border: 0;
+        display: block;
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+
+    thead {
+        display: none; /* Hide table header for small screens */
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label); /* Add a label before each cell */
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+        background-color: #00796b;
+        color: #fff;
+    }
+}
+
