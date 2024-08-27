@@ -207,7 +207,7 @@ th, td {
     padding: 12px 15px;
     border: 1px solid #ddd;
     text-align: left;
-    background-color: green;
+    background-color: #f9f9f9;
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
