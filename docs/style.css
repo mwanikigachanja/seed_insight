@@ -264,45 +264,56 @@ tr:nth-child(even) {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 85vh;
     overflow: hidden;
+    background-color: #f5f5f5;
 }
 
-.carousel-item img {
-    height: 80vh;
+.carousel-inner img {
+    height: 85vh;
     object-fit: cover;
+    filter: brightness(70%);
 }
 
-.carousel-caption {
+.carousel-overlay {
     position: absolute;
-    bottom: 20%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
+    max-width: 80%;
+    width: 100%;
 }
 
-.carousel-caption h5 {
-    font-size: 36px;
-    font-weight: bold;
+.carousel-overlay h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.carousel-caption p {
-    font-size: 18px;
-    margin: 10px 0 0;
+.carousel-overlay p {
+    font-size: 20px;
+    margin-bottom: 0;
 }
 
-/* Adjust Caption for Mobile */
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+/* Adjustments for Mobile */
 @media screen and (max-width: 768px) {
-    .carousel-caption h5 {
-        font-size: 24px;
+    .carousel-overlay h1 {
+        font-size: 28px;
     }
-    
-    .carousel-caption p {
-        font-size: 14px;
+
+    .carousel-overlay p {
+        font-size: 16px;
     }
 }
 
