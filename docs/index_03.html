@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeedInsight - Automated Crop Planning and Recommendation Module</title>
+    <!-- Favicon Link -->
+<link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+ <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Add some styling for the location input and table */
+        #location-form {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        #location-input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            width: 250px;
+        }
+
+        #submit-location {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #submit-location:hover {
+            background-color: #218838;
+        }
+
+        #seed-recommendations {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to SeedInsight</h1>
+
+    <div id="hero" class="hero-section">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/1.jpg" class="d-block w-100" alt="High-Quality Seeds">
+                    <div class="carousel-overlay">
+                        <h1>High-Quality Seeds</h1>
+                        <p>Ensuring the best yield for your farm.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2.jpg" class="d-block w-100" alt="Diverse Seed Varieties">
+                    <div class="carousel-overlay">
+                        <h1>Diverse Seed Varieties</h1>
+                        <p>Catered for all ecozones.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/3.jpg" class="d-block w-100" alt="Expert Recommendations">
+                    <div class="carousel-overlay">
+                        <h1>Expert Recommendations</h1>
+                        <p>Guiding you towards the best planting decisions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </div>
+    
+    
+    
+
+    <div id="location-form">
+        <form id="locationForm">
+            <input type="text" id="location-input" placeholder="Enter your location (e.g., Nairobi)">
+            <button type="submit" id="submit-location">Get Recommendations</button>
+        </form>
+    </div>
+
+    <div id="weather-info">
+        <div class="weather-card">
+            <h3>Location</h3>
+            <p id="weather-location">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Altitude Zone</h3>
+            <p id="weather-zone">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Temperature</h3>
+            <p id="weather-temperature">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Weather</h3>
+            <p id="weather-description">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Humidity</h3>
+            <p id="weather-humidity">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Max Temp</h3>
+            <p id="weather-maxtemp">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Min Temp</h3>
+            <p id="weather-mintemp">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Wind Speed</h3>
+            <p id="weather-wind">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Cloudiness</h3>
+            <p id="weather-clouds">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Latitude</h3>
+            <p id="weather-lat">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Longitude</h3>
+            <p id="weather-long">Loading...</p>
+        </div>
+        <div class="weather-card">
+            <h3>Elevation</h3>
+            <p id="weather-alt">Loading...</p>
+        </div>
+    </div>
+    
+
+    <div id="seed-recommendations">
+        <h2>Recommended Seeds</h2>
+        <table id="seed-table" style="display:flexbox;">
+            <thead>
+                <tr>
+                    <th>Crop</th>
+                    <th>Seed Variety</th>
+                    <th>Maturity Period (Days)</th>
+                    <th>Seed Rate per Acre (kg)</th>
+                    <th>Yield (90Kgs bags/Acre)</th>
+                    <th>Attributes</th>
+                </tr>
+            </thead>
+            <tbody id="seed-body"></tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Charles Mwaniki. All rights reserved.</p>
+            <p>SeedInsight - Your Trusted Crop Planning and Recommendation Tool</p>
+            <p><a href="https://github.com/mwanikigachanja">Developed by Charles Mwaniki</a></p>
+        </div>
+    </footer>
+    
+
+    <script>
+        const seedData = {
+            'Lowland Altitude': [
+                { crop: 'Maize',variety: 'PH 1', maturity: '75-100', rate: '10', yield: '20', attributes: 'Early maturity, Heat tolerant, Drought resistant' },
+                { crop:'Maize',variety: 'PH 4', maturity: '100-120', rate: '10', yield: '26', attributes: 'Heat tolerant, Very sweet tasting' },
+                
+            ],
+            'Highland Altitude': [
+                { crop: 'Maize', variety: 'H6213', maturity: '150-210', rate: '10', yield: '52', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, G.L.S,stem and leaf blight.' },
+                { crop: 'Maize', variety: 'H614D', maturity: '150-210', rate: '10', yield: '38', attributes: 'Sweet tasting variety, Has good density, Has long storage period, Resistant to GLS and Blight' },
+                { crop: 'Maize', variety: 'H614D', maturity: '150-210', rate: '10', yield: '48', attributes: 'Resistant to lodging, Has good husk cover, Good storage quality, Resistant to GLS and ear rot.' },
+                
+            ],
+            'Dryland Altitude': [
+                { crop: 'Maize', variety: 'DH08', maturity: '100-120', rate: '10', yield: '26', attributes: 'Short drought tolerance, Good husk cover and stand-ability.' },
+                { crop: 'Maize', variety: 'DH04', maturity: '75-100', rate: '10', yield: '24', attributes: 'Semi-dent, Good stand ability, Tolerant to ear rots' },
+                
+            ],
+            'Medium Altitude': [
+                { crop: 'Maize', variety: 'H513', maturity: '110-130', rate: '10', yield: '26', attributes: 'Sweet tasting variety, Has good density, Has long storage period, Resistant to GLS and Blight' },
+                { crop: 'Maize', variety: 'H516', maturity: '120-150', rate: '10', yield: '30', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, G.L.S,stem and leaf blight.' },
+                { crop: 'Maize', variety: 'H517', maturity: '120-150', rate: '10', yield: '30', attributes: 'Tolerant to foliar diseases and pests, Has better husk cover, tolerant to cob rot and, MSV, Ideal for irrigation' },
+            ],
+            'Transitional Altitude': [
+                { crop: 'Maize', variety: 'H520', maturity: '150-210', rate: '10', yield: '34', attributes: 'Resistant to lodging, Has good husk cover, Good storage quality, Resistant to GLS and ear rot.' },
+                { crop: 'Maize', variety: 'H624', maturity: '150-210', rate: '10', yield: '36', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, G.L.S,stem and leaf blight.' },
+            ],
+            // Add more ecozones and seed recommendations here
+        };
+
+        document.addEventListener("DOMContentLoaded", function() {
+            async function fetchWeather(location = 'Kitale') {
+                const apiKey = 'e57fe133456b8c6ab739fbc3900619d0'; // Replace with your actual API key
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`);
+                const data = await response.json();
+
+                const lat = data.coord.lat;
+                const lon = data.coord.lon;
+                const altResponse = await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lat}&longitude=${lon}`);
+                const altData = await altResponse.json();
+                const elevation = altData.elevation;
+
+                // Determine altitude zone
+                let altitudeZone = 'Unknown Altitude';
+                if (elevation < 500) {
+                    altitudeZone = 'Lowland Altitude';
+                } else if (elevation >= 500 && elevation < 1400) {
+                    altitudeZone = 'Dryland Altitude';
+                } else if (elevation >= 1401 && elevation < 1500) {
+                    altitudeZone = 'Medium Altitude';
+                } else if (elevation >= 1501 && elevation < 1800) {
+                    altitudeZone = 'Transitional Altitude';
+                } else if (elevation >= 1801 && elevation < 2800) {
+                    altitudeZone = 'Highland Altitude';
+                } else if (elevation >= 2801) {
+                    altitudeZone = 'Very High Altitude';
+                }
+
+                // Display weather and location information
+                document.getElementById('weather-location').textContent = `Location: ${location}`;
+                document.getElementById('weather-zone').textContent = `Altitude Zone: ${altitudeZone}`;
+                document.getElementById('weather-temperature').textContent = `Temperature: ${data.main.temp} °C`;
+                document.getElementById('weather-description').textContent = `Weather: ${data.weather[0].description}`;
+                document.getElementById('weather-humidity').textContent = `Humidity: ${data.main.humidity}%`;
+                document.getElementById('weather-maxtemp').textContent = `Max Temp: ${data.main.temp_max} °C`;
+                document.getElementById('weather-mintemp').textContent = `Min Temp: ${data.main.temp_min} °C`;
+                document.getElementById('weather-wind').textContent = `Wind Speed: ${data.wind.speed} m/s`;
+                document.getElementById('weather-clouds').textContent = `Cloudiness: ${data.clouds.all}%`;
+                document.getElementById('weather-lat').textContent = `Latitude: ${lat}`;
+                document.getElementById('weather-long').textContent = `Longitude: ${lon}`;
+                document.getElementById('weather-alt').textContent = `Elevation: ${elevation}`;
+
+                displaySeedRecommendations(altitudeZone);
+            }
+
+            function displaySeedRecommendations(altitudeZone) {
+                const seedTable = document.getElementById('seed-table');
+                const seedBody = document.getElementById('seed-body');
+                seedBody.innerHTML = '';
+
+                const recommendations = seedData[altitudeZone];
+                if (recommendations && recommendations.length > 0) {
+                    seedTable.style.display = '';
+                    recommendations.forEach(seed => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${seed.crop}</td><td>${seed.variety}</td><td>${seed.maturity}</td><td>${seed.rate}</td><td>${seed.yield}</td><td>${seed.attributes}</td>`;
+                        seedBody.appendChild(row);
+                    });
+                } else {
+                    seedTable.style.display = 'none';
+                }
+            }
+
+            fetchWeather();
+
+            document.getElementById('locationForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const locationInput = document.getElementById('location-input').value;
+                if (locationInput) {
+                    fetchWeather(locationInput);
+                }
+            });
+        });
+    </script>
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- Bootstrap Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
