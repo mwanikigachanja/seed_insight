@@ -8,8 +8,9 @@ const seedData = {
     ],
     'Highland Altitude': [
         { crop: 'Maize', variety: 'H6213', maturity: '150-210', rate: '10', yield: '52', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, G.L.S,stem and leaf blight.' },
-        { crop: 'Maize', variety: 'H614D', maturity: '150-210', rate: '10', yield: '38', attributes: 'Sweet tasting variety, Has good density, Has long storage period, Resistant to GLS and Blight' },
-        { crop: 'Maize', variety: 'H614D', maturity: '150-210', rate: '10', yield: '48', attributes: 'Resistant to lodging, Has good husk cover, Good storage quality, Resistant to GLS and ear rot.' },
+        { crop: 'Maize', variety: 'H629', maturity: '150-210', rate: '10', yield: '48', attributes: 'Sweet tasting variety, Has good density, Has long storage period, Resistant to GLS and Blight' },
+        { crop: 'Maize', variety: 'H614D', maturity: '150-210', rate: '10', yield: '38', attributes: 'Resistant to lodging, Has good husk cover, Good storage quality, Resistant to GLS and ear rot.' },
+        
         
     ],
     'Dryland Altitude': [
