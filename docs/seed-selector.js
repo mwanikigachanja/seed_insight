@@ -30,7 +30,7 @@ const seedData = {
         { crop: 'Maize', variety: 'H516', maturity: '120-150', rate: '10', yield: '30', attributes: 'Very sweet tasting, Resistant to blight, rust, and lodging' },
         { crop: 'Maize', variety: 'H517', maturity: '120-150', rate: '10', yield: '32', attributes: 'Tolerant to foliar diseases and pests, Better husk cover, Tolerant to cob rot and MSV, Ideal for irrigation' },
         { crop: 'Beans', variety: 'GLP 2 (Rosecoco)', maturity: '75-90', rate: '25', yield: '10', attributes: 'Shiny dark purple or reddish purple seeds, Vigorous plant with slight climbing tendency and flat pods, Performs best in cool areas' },
-        { crop: 'Finger Millet', variety: 'Elmba Rhodes', maturity: '90-105', rate: '10', yield: '12', attributes: 'High seeding vigor and forage yield, Suited for a wide range of climatic conditions, Does best in light sandy soils, Quick growing, Suited to intensive grazing' },
+        { crop: 'Pasture Grass', variety: 'Elmba Rhodes', maturity: '120', rate: '4', yield: '12', attributes: 'High seeding vigor and forage yield, Suited for a wide range of climatic conditions, Does best in light sandy soils, Quick growing, Suited to intensive grazing' },
         { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
     'Transitional Altitude': [
