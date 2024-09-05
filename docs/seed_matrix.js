@@ -6,6 +6,7 @@ const seedData = {
         { crop: 'Maize', variety: 'DH04', maturity: '75-100', rate: '10', yield: '24', attributes: 'Semi-dent, Good stand ability, Tolerant to ear rots' },
         { crop: 'Sorghum', variety: 'Gadam', maturity: '90', rate: '10', yield: '8', attributes: 'Whitish in color, Tolerant to Stem borers, Shoot fly and Foliar diseases, Excellent malting qualities' },
         { crop: 'Finger Millet', variety: 'Serena', maturity: '90-105', rate: '10', yield: '12', attributes: 'Soft and excellent herbage, Drought tolerant, Fairly tolerant to Striga, Rust, Leaf blight, and Grey leaf spot' },
+        { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
     'Highland Altitude': [
         { crop: 'Maize', variety: 'H614D', maturity: '160-210', rate: '10', yield: '38', attributes: 'Sweet tasting, Good density, Long storage period, Resistant to GLS and Blight' },
@@ -30,6 +31,7 @@ const seedData = {
         { crop: 'Maize', variety: 'H517', maturity: '120-150', rate: '10', yield: '32', attributes: 'Tolerant to foliar diseases and pests, Better husk cover, Tolerant to cob rot and MSV, Ideal for irrigation' },
         { crop: 'Beans', variety: 'GLP 2 (Rosecoco)', maturity: '75-90', rate: '25', yield: '10', attributes: 'Shiny dark purple or reddish purple seeds, Vigorous plant with slight climbing tendency and flat pods, Performs best in cool areas' },
         { crop: 'Finger Millet', variety: 'Elmba Rhodes', maturity: '90-105', rate: '10', yield: '12', attributes: 'High seeding vigor and forage yield, Suited for a wide range of climatic conditions, Does best in light sandy soils, Quick growing, Suited to intensive grazing' },
+        { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
     'Transitional Altitude': [
         { crop: 'Maize', variety: 'H520', maturity: '120-150', rate: '10', yield: '34', attributes: 'Double cobbing variety, Very sweet tasting, GLS and MSV tolerant' },
@@ -37,5 +39,6 @@ const seedData = {
         { crop: 'Beans', variety: 'Wairimu Dwarf', maturity: '75-85', rate: '25', yield: '8', attributes: 'Cream seeds with black-brown spots, Tolerant to halo blight, Prefers medium altitude and is tolerant to drought' },
         { crop: 'Sorghum', variety: 'P 224', maturity: '75-90', rate: '10', yield: '10-15', attributes: 'Brown seeded variety, Tall type with uniform plant height, Tolerant to lodging and blast' },
         { crop: 'Wheat', variety: 'KS Farasi', maturity: '119 (+/-5)', rate: '50', yield: '17 bags', attributes: 'Tolerant to most foliar diseases, Highly vigorous in growth, Good baking quality' },
+        { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
 };
