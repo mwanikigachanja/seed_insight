@@ -5,7 +5,7 @@ const seedData = {
         { crop: 'Maize', variety: 'DH08', maturity: '100-120', rate: '10', yield: '26', attributes: 'Short drought tolerance, Good husk cover and stand-ability.' },
         { crop: 'Maize', variety: 'DH04', maturity: '75-100', rate: '10', yield: '24', attributes: 'Semi-dent, Good stand ability, Tolerant to ear rots' },
         { crop: 'Sorghum', variety: 'Gadam', maturity: '90', rate: '10', yield: '8', attributes: 'Whitish in color, Tolerant to Stem borers, Shoot fly and Foliar diseases, Excellent malting qualities' },
-        { crop: 'Finger Millet', variety: 'Serena', maturity: '90-105', rate: '10', yield: '12', attributes: 'Soft and excellent herbage, Drought tolerant, Fairly tolerant to Striga, Rust, Leaf blight, and Grey leaf spot' },
+        { crop: 'Finger Millet', variety: 'P224', maturity: '90-120', rate: '10', yield: '12', attributes: 'Soft and excellent herbage, Drought tolerant, Fairly tolerant to Striga, Rust, Leaf blight, and Grey leaf spot' },
         { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
     'Highland Altitude': [
@@ -21,7 +21,7 @@ const seedData = {
         { crop: 'Maize', variety: 'DH04', maturity: '75-100', rate: '10', yield: '24', attributes: 'Semi-dent, Good stand ability, Tolerant to ear rots' },
         { crop: 'Maize',variety: 'PH 1', maturity: '75-100', rate: '10', yield: '20', attributes: 'Early maturity, Heat tolerant, Drought resistant' },
         { crop:'Maize',variety: 'PH 4', maturity: '100-120', rate: '10', yield: '26', attributes: 'Heat tolerant, Very sweet tasting' },
-        { crop: 'Sorghum', variety: 'Katumani', maturity: '75-85', rate: '10', yield: '7-10', attributes: 'Red seeded variety, Short variety, Drought tolerant' },
+        { crop: 'Finger Millet', variety: 'Katumani', maturity: '75-85', rate: '10', yield: '7-10', attributes: 'Red seeded variety, Short variety, Drought tolerant' },
         { crop: 'Cowpeas', variety: 'Ken Kunde 1 (KK1)', maturity: '75-90', rate: '20', yield: '6', attributes: 'Dual purpose, Drought tolerant, Performs well in a wide variety of soils' },
         { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
