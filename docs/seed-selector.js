@@ -37,7 +37,7 @@ const seedData = {
         { crop: 'Maize', variety: 'H520', maturity: '120-150', rate: '10', yield: '34', attributes: 'Double cobbing variety, Very sweet tasting, GLS and MSV tolerant' },
         { crop: 'Maize', variety: 'H624', maturity: '120-150', rate: '10', yield: '36', attributes: 'Double cobbing variety, Very sweet tasting' },
         { crop: 'Beans', variety: 'Wairimu Dwarf', maturity: '75-85', rate: '25', yield: '8', attributes: 'Cream seeds with black-brown spots, Tolerant to halo blight, Prefers medium altitude and is tolerant to drought' },
-        { crop: 'Sorghum', variety: 'P 224', maturity: '75-90', rate: '10', yield: '10-15', attributes: 'Brown seeded variety, Tall type with uniform plant height, Tolerant to lodging and blast' },
+        { crop: 'Finger Millet', variety: 'P 224', maturity: '75-90', rate: '10', yield: '10-15', attributes: 'Brown seeded variety, Tall type with uniform plant height, Tolerant to lodging and blast' },
         { crop: 'Wheat', variety: 'KS Farasi', maturity: '119 (+/-5)', rate: '50', yield: '17 bags', attributes: 'Tolerant to most foliar diseases, Highly vigorous in growth, Good baking quality' },
         { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
