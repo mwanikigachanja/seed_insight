@@ -13,7 +13,7 @@ const seedData = {
         { crop: 'Maize', variety: 'H6213', maturity: '160-210', rate: '10', yield: '54', attributes: 'High-yielder, Excellent milling qualities, Resistant to lodging, ear rot, rust, GLS, stem and leaf blight' },
         { crop: 'Wheat', variety: 'KS Simba', maturity: '100-120', rate: '50', yield: '18-22', attributes: 'Hard red wheat, Good baking qualities, Moderate resistance to stem rust, High yielding' },
         { crop: 'Sorghum', variety: 'E 1291', maturity: '150-160', rate: '15-20', yield: '22-25', attributes: 'Dual-purpose variety for human and silage consumption, Performs well in high altitude areas' },
-        { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '110-120', rate: '25', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
+        { crop: 'Beans', variety: 'GLP 2 (Rosecoco)', maturity: '75-90', rate: '30', yield: '10', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
     'Dryland Altitude': [
         { crop: 'Maize', variety: 'DH08', maturity: '100-120', rate: '10', yield: '26', attributes: 'Short drought tolerance, Good husk cover and stand-ability.' },
@@ -22,6 +22,7 @@ const seedData = {
         { crop:'Maize',variety: 'PH 4', maturity: '100-120', rate: '10', yield: '26', attributes: 'Heat tolerant, Very sweet tasting' },
         { crop: 'Sorghum', variety: 'Katumani', maturity: '75-85', rate: '10', yield: '7-10', attributes: 'Red seeded variety, Short variety, Drought tolerant' },
         { crop: 'Cowpeas', variety: 'Ken Kunde 1 (KK1)', maturity: '75-90', rate: '20', yield: '6', attributes: 'Dual purpose, Drought tolerant, Performs well in a wide variety of soils' },
+        { crop: 'Beans', variety: 'GLP 1127 (New Mwezi Moja)', maturity: '75-90', rate: '30', yield: '8', attributes: 'Large beige or light brown speckled purple with long broad pods, Medium yielder, Performs best in warmer areas' },
     ],
     'Medium Altitude': [
         { crop: 'Maize', variety: 'H513', maturity: '110-130', rate: '10', yield: '26', attributes: 'Very sweet tasting, Good stand ability' },
