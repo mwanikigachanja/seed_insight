@@ -10,37 +10,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-h1 {
-    text-align: center;
-    margin-top: 20px;
-}
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-/* Hero Section Styles */
-.hero-section {
-    margin-top: 20px;
-}
+        /* Hero Section Styles */
+        .hero-section {
+            margin-top: 20px;
+        }
 
-.carousel-inner img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
 
-.carousel-overlay {
+        .carousel-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -51,103 +51,89 @@ h1 {
     border-radius: 5px;
     text-align: center;
     width: 70%;
-    font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
-    .carousel-overlay {
-        width: 90%;
-        font-size: 1.2rem;
-    }
-}
 
-/* Weather Information Section */
-#weather-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-}
+        /* Weather Information Section */
+        #weather-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
 
-.weather-card {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: calc(33% - 20px);
-    text-align: center;
-}
+        .weather-card {
+            background-color: darkgreen;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 20px);
+            text-align: center;
+        }
 
-.weather-card h3 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
+        .weather-card h3 {
+            margin-bottom: 10px;
+        }
 
-@media (max-width: 768px) {
-    .weather-card {
-        width: 80%;
-    }
-}
+        /* Seed Recommendations Table */
+        #seed-recommendations {
+            margin-top: 30px;
+        }
 
-@media (max-width: 576px) {
-    .weather-card {
-        width: 100%;
-    }
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
 
-/* Seed Recommendations Table */
-#seed-recommendations {
-    margin-top: 30px;
-}
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    overflow-x: auto;
-    display: block;
-}
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-    white-space: nowrap;
-}
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-th {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1rem;
-}
+        tr:hover {
+            background-color: #f5f5f5;
+        }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+        @media (max-width: 768px) {
+            #weather-info {
+                flex-direction: column;
+                align-items: center;
+            }
 
-tr:hover {
-    background-color: #f5f5f5;
-}
+            .weather-card {
+                width: 80%;
+            }
 
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
 
-footer a {
-    color: #4CAF50;
-    text-decoration: none;
-}
+        @media (max-width: 576px) {
+            .carousel-overlay {
+                font-size: 14px;
+                bottom: 10px;
+                left: 10px;
+            }
 
-footer p {
-    margin: 0;
-}
-
+            #location-form, #weather-info {
+                text-align: center;
+            }
+        }
 
     </style>
 </head>
