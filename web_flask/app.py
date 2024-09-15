@@ -55,7 +55,7 @@ def register_company():
 
 # Ecozone Registration Route (similar to the above)
 # Add the route and form rendering logic here
-
+# More pleasing content coming
 # Index Route
 @app.route('/')
 def index():
